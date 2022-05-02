@@ -264,7 +264,7 @@ On the contrary, if changes have occurred, the difference image will depict valu
 
 So let us try this with our two Landsat images. One thing we have to consider is that we cannot simply substract a complete image from the other but we should rather work on an individual channel level. Here, we will hence first extract the near-infrared (nir) channel of both images and then substract the second image from the first. To extract the nir channel we use:
 
-	nir_d239 <- ls_d239_clip3[[4]]
+	nir_d239 <- ls_d239_clip2[[4]]
 	nir_d310 <- d310_masked[[4]]
 
 By using the doubled squared brackets [[]], we can access individual bands of a raster stack. After extracting the nir bands, we can calculate and plot the difference image using:
@@ -304,7 +304,7 @@ These kind of equations are referred to as "normalized differences". One key-adv
 
 To calculate NDVIs from our Landsat images we execute the following code:
 
-	ndvi_d239 <- (ls_d239_clip3[[4]]-ls_d239_clip3[[3]])/(ls_d239_clip3[[4]]+ls_d239_clip3[[3]])
+	ndvi_d239 <- (ls_d239_clip2[[4]]-ls_d239_clip2[[3]])/(ls_d239_clip2[[4]]+ls_d239_clip2[[3]])
 	ndvi_d310 <- (d310_masked[[4]]-d310_masked[[3]])/(d310_masked[[4]]+d310_masked[[3]])
 
 Then we can have a look at the two NDVI images - we again adapt the z-lim range and furthermore add a new command to plot the two plots side-by-side:
