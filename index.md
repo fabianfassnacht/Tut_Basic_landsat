@@ -28,7 +28,7 @@ Detailed information about the structure of the datasets can be found here: [htt
 
 As first step, load all necessary R packages by executing the following code:
 
-    pkgs<-c("rgdal","caret","raster","foreign", "kernlab", "colorRamps", "landsat")
+    pkgs<-c("rgdal","caret","raster","foreign", "kernlab")
 	lapply(pkgs,require, character.only=T)
 
 R will give you a warning message in case a package is not installed yet. If this is the case, please install the packages either through the main menu of Rstudio by selecting **"Tools" =>** **"Install packages"** and then following the appearing dialogue, or by entering the corresponding R code to install the packages into the console. E.g., to install the package "raster" use the code:
