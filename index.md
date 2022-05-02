@@ -175,8 +175,7 @@ We can now see, that area covered by the clipped satellite scene is a lot smalle
 To clip the raster file to the exact shape of the polygon, only one additional step is required. Basically, the clipping procedure remains the same but after the image has been clipped to the rectangular extent of the shapefile, the remainding pixels that are not located within the polygon are masked out using the **mask** command of the *raster* package. The results in the following code:
 
 	setwd("D:/remote_sensing/Landsat/Output")
-	ls_d239_clip2 <- crop(ls_d239, e, overwrite=TRUE)
-	ls_d239_clip3 <- mask(ls_d239_clip2, vec)
+	ls_d239_clip2 <- mask(ls_d239_clip, vec)
 
 The masking procedure may take quite a long time depending on the computer's performance. In the end the image should look like this:
 
