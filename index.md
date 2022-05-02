@@ -328,7 +328,7 @@ which will result in the following plot:
 
 As a final step, we will now identify areas that show a very high NDVI difference by applying a threshold. That is, we will build a binary mask in which all areas that have a NDVI difference > 0.5 will be displayed as 1 and all other values as 0. In this case, we will use the **abs()**-function (returning absolute values) to consider both negative and positive differences. We run the following code:
 
-	ndvi_gt_0_5 <- abs(diff_ndvi) > 0.5 
+	ndvi_gt_0_5 <- abs(ndvi_diff) > 0.5 
 	plot(ndvi_gt_0_5)
 
 ![](Tut_1_Fig_21.png)
