@@ -343,7 +343,7 @@ The function is called **kmeans()** in R and was originally not developed to par
 
 Let's start by trying to run the following code:
 
-	class1 <- kmeans(as.data.frame(d239_masked), 12, iter.max = 10, nstart = 10)
+	class1 <- kmeans(as.data.frame(ls_d239_clip2), 12, iter.max = 10, nstart = 10)
 
 The code will convert the raster-object to a data.frame and then run the kmeans-algorithm to classify all pixel-values into 12 classes. This attempt will result in an error message:
 
@@ -351,7 +351,7 @@ The code will convert the raster-object to a data.frame and then run the kmeans-
 
 The reason for this is, that our raster data contains some NA values (the areas we masked out before). We can verify that our dataset contains NA values by running the following command:
 
-	table(is.na(values(d239_masked)))
+	table(is.na(values(ls_d239_clip2)))
 
 This command is a nested command, we use the **values()**-function to access only the pixel values of the raster-dataset (and ignore the other properties of the raster object), then we apply the **is.na()** function to check for each raster value whether it is NA or not. Finally, we use the **table()**-function to translate the output of the **is.na()**-function (which is table with as many entries as the raster dataset has pixels) into a contingency table that returns to counts of each factor level (in this case there are only two differing values/factors: TRUE and FALSE). The console output looks like this:
 
@@ -359,7 +359,7 @@ This command is a nested command, we use the **values()**-function to access onl
 
 So we now know, that the NAs are problematic for the kmeeans algorithm. We will hence remove them from our dataset. As first step, we will copy our image into a new variable to not change the original image. This can be achieved using the code:
 
-	d239_masked_no_na <- d239_masked
+	d239_masked_no_na <- ls_d239_clip2
 
 Then we replace all NA values of the image with the value 99999 by running:
 
