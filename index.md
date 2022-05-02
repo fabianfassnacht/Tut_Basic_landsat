@@ -359,15 +359,15 @@ This command is a nested command, we use the **values()**-function to access onl
 
 So we now know, that the NAs are problematic for the kmeeans algorithm. We will hence remove them from our dataset. As first step, we will copy our image into a new variable to not change the original image. This can be achieved using the code:
 
-	d239_masked_no_na <- ls_d239_clip2
+	d239_no_na <- ls_d239_clip2
 
 Then we replace all NA values of the image with the value 99999 by running:
 
-	d239_masked_no_na[is.na(d239_masked_no_na)] <- 99999
+	d239_no_na[is.na(d239_masked_no_na)] <- 99999
 
 After running this code, we can recheck the NA situation:
 
-	table(is.na(values(d239_masked_no_na)))
+	table(is.na(values(d239_no_na)))
 
 This will return:
 
@@ -375,7 +375,7 @@ This will return:
 
 Hence, we have cleaned the dataset from all NA values. We will now try to re-run the kmeans-algorithm by executing:
 
-	class1 <- kmeans(as.data.frame(d239_masked_no_na), 12, iter.max = 10, nstart = 10)
+	class1 <- kmeans(as.data.frame(d239_no_na), 12, iter.max = 10, nstart = 10)
 
 This time, no error message will occur. It could be that some warning messages are printed, but we will ignore these for now. After the kmeans-algorithm is completed, we will have a new object called **class1**. We can have a closer look at the structure of this oject using:
 
@@ -399,7 +399,7 @@ The values from your own run, are likely to deviate from the ones you can see de
 
 As next step, we will now retransform the classification results of the kmeans-algorithm to a raster image. The easiest way to do this is to overwrite the values of a band from the original image. We can achieve this by first copying a band of the original image into a new variable:
 
-	class1_out <- d239_masked[[1]]
+	class1_out <- ls_d239_clip2[[1]]
 
 And then overwriting the values of this band with the clustering results:
 
