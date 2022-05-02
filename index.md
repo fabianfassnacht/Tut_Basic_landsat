@@ -38,6 +38,7 @@ R will give you a warning message in case a package is not installed yet. If thi
 After all packages are successfully installed, load the images using two steps. First, save the complete file-paths of all Landsat bands into a text-variable using the command:
 
 	bandnames <- list.files("D:/remote_sensing/Landsat/D239", pattern="\\.tif$", full.names = T)
+	bandnames
 
 The file-path given in the code above should be changed to match the path where you are storing the corresponding files on your computer. Next, apply the "stack" command of the raster package to load the image into an R raster object:
 
