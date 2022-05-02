@@ -375,7 +375,7 @@ This will return:
 
 Hence, we have cleaned the dataset from all NA values. We will now try to re-run the kmeans-algorithm by executing:
 
-	class1 <- kmeans(as.data.frame(d239_no_na), 12, iter.max = 10, nstart = 10)
+	class1 <- kmeans(values(d239_no_na), 12, iter.max = 10, nstart = 10)
 
 This time, no error message will occur. It could be that some warning messages are printed, but we will ignore these for now. After the kmeans-algorithm is completed, we will have a new object called **class1**. We can have a closer look at the structure of this oject using:
 
