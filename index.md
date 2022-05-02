@@ -22,9 +22,7 @@ The datasets applied in this tutorial are available here:
 In this tutorial we will use two Landsat-8 scenes. To be more precise, we will make use of the Landsat 8 surface reflectance product which can be downloaded from the USGS earth explorer webpage [https://earthexplorer.usgs.gov/](https://earthexplorer.usgs.gov/) .
 How to download the corresponding images will be demonstrated in the course.
 
-Detailed information about the structure of the datasets can be found here: [https://ilias.studium.kit.edu/goto.php?target=file_895949_download&client_id=produktiv](https://ilias.studium.kit.edu/goto.php?target=file_895949_download&client_id=produktiv "Landsat 8 product guide")
-
-It is highly recommended to read this document before working with the Landsat 8 reflectance product data. A corresponding document for the Landsat 4-7 reflectance products (which will be used in the course at a later stage) can be found here: [https://ilias.studium.kit.edu/goto.php?target=file_895950_download&client_id=produktiv](https://ilias.studium.kit.edu/goto.php?target=file_895950_download&client_id=produktiv)  
+Detailed information about the structure of the datasets can be found here: [https://www.usgs.gov/landsat-missions/product-information](https://www.usgs.gov/landsat-missions/product-information "Landsat 8 product guide")
 
 ### Step 1: Loading Landsat data ###
 
