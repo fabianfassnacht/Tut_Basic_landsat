@@ -183,7 +183,7 @@ The masking procedure may take quite a long time depending on the computer's per
 
 #### Exercise: Clipping #####
 
-To practise the clipping procedure, try to implement the code to also clip the second Landsat image (fromt he folder **D310**) using the same R commands. We will use the clipped version of this second image (which should look like the image below) in the next Step.
+To practise the clipping procedure, try to implement the code to also clip the second Landsat image (from the folder **D310**) using the same R commands. We will use the clipped version of this second image (which should look like the image below) in the next Step.
 
 ![](Tut_1_Fig_12.png)
 
@@ -236,10 +236,10 @@ In this new layer, all areas affected by clouds or cloud-cover are now marked wi
 
 Now, we can apply this mask to the original clipped Landsat image using the following command:
 
-	d310_masked <- mask(ls_d310_clip3, d310_mask_clip_bin, maskvalue=1,  updatevalue=NA)
+	d310_masked <- mask(ls_d310_clip2, d310_mask_clip_bin, maskvalue=1,  updatevalue=NA)
 	plotRGB(d310_masked, r=3, g=2, b=1, stretch="hist")
 
-This will lead to a new version of the Landsat image where all cloud-affected pixels were masked out by replacing all values in the Landsat image with NA (=not available).
+!! Be aware that you have to create the ls_d310_clip2 image first by adapting the code above provided for the d239 image as mentioned in the exercise - this code is not included here!! This will lead to a new version of the Landsat image where all cloud-affected pixels were masked out by replacing all values in the Landsat image with NA (=not available).
 
 ![](Tut_1_Fig_16.png)
 
