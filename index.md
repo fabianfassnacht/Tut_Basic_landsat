@@ -343,7 +343,7 @@ The function is called **kmeans()** in R and was originally not developed to par
 
 Let's start by trying to run the following code:
 
-	class1 <- kmeans(as.data.frame(ls_d239_clip2), 12, iter.max = 10, nstart = 10)
+	class1 <- kmeans(values(ls_d239_clip2), 12, iter.max = 10, nstart = 10)
 
 The code will convert the raster-object to a data.frame and then run the kmeans-algorithm to classify all pixel-values into 12 classes. This attempt will result in an error message:
 
